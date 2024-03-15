@@ -1,71 +1,18 @@
-
-class RunnerAnimal extends Animal {
-
-    @Override
-    public void fly() {
-    }
-
-    @Override
-    public void swim() {
-    }
-}
-
-
-class FlyingSwimmingAnimal extends Animal {
-
-    @Override
-    public void toGo() {
-    }
-}
-
-
-class FlyingAnimal extends Animal {
-
-    @Override
-    public void toGo() {
-    }
-
-    @Override
-    public void swim() {
-    }
-}
-
-
-class SwimmingAnimal extends Animal {
-
-    @Override
-    public void toGo() {
-    }
-
-    @Override
-    public void fly() {
-    }
-}
-
 public class Main {
+
     public static void main(String[] args) {
-        Animal cat = new RunnerAnimal();
-        Animal bird = new FlyingSwimmingAnimal();
-        Animal eagle = new FlyingAnimal();
-        Animal fish = new SwimmingAnimal();
-
-
-        System.out.println("---------------------------");
-        cat.toGo();   // +
-        cat.fly();    // -
-        cat.swim();   // -
-        System.out.println("---------------------------");
-        bird.toGo();  // -
-        bird.fly();   // +
-        bird.swim();  // +
-        System.out.println("---------------------------");
-        eagle.toGo(); // -
-        eagle.fly();  // +
-        eagle.swim(); // -
-        System.out.println("---------------------------");
-        fish.toGo();  // -
-        fish.fly();   // -
-        fish.swim();  // +
-        System.out.println("---------------------------");
+        GBLinkedList<Integer> myList = new GBLinkedList<>();
+        System.out.println("Список пуст? " + myList.isEmpty());
+        myList.add(1);
+        myList.add(2);
+        myList.add(3);
+        myList.add(4);
+        myList.display();  // 1 2 3 4
+        System.out.println("Размер списка: " + myList.size());  // 4
+        System.out.println("Есть число 3? " + myList.contains(3));  // true
+        System.out.println("Есть число 5? " + myList.contains(5));  // false
+        myList.remove(2); // Убирает число 2 из списка
+        myList.display();  // 1 3 4
     }
+
 }
